@@ -18,9 +18,3 @@ jobs:
           commit-hash: '@~'
         # Read ./diff.txt in your next step to use the diff.
       - run: cat ./diff.txt
-
-      - name: Run which-files-changed
-        uses: BuddhikaGeasman/which-files-changed@v.0.1.0-alpha
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pr-comment: 'true' # or 'false' to control where to add the changes
