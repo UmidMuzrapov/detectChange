@@ -16,4 +16,4 @@ jobs:
     - name: List Changes
       run: |
         git diff --name-only origin/main ${{ github.sha }} > test.txt
-        echo test.txt
+        cat test.txt
