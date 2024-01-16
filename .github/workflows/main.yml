@@ -1,6 +1,9 @@
 name: Echo Changes
 
-on: push
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
 
 jobs:
   echo-changes:
@@ -13,4 +16,4 @@ jobs:
     - name: List Changes
       run: |
         echo "Changes in the push:"
-        git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+        git diff --name-only origin/main ${{ github.sha }}
