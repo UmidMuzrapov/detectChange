@@ -10,6 +10,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - uses: actions/checkout@v3
+        with:
+          # Fetch HEAD and the commit before it
+          fetch-depth: 2
+        # Get the formatted line-by-line diff
+      - id: get_diff
+        uses: ILikePlayingGames/line-diff
+        with:
+          commit-hash: '@~'
+        # Read ./diff.txt in your next step to use the diff.
+      - run: cat ./diff.txt
+
       - name: Run which-files-changed
         uses: BuddhikaGeasman/which-files-changed@v.0.1.0-alpha
         with:
