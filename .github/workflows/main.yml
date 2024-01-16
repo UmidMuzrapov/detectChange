@@ -12,7 +12,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
 
     - name: List Changes
       run: |
-        git diff --name-only origin/main ${{ github.sha }} > test.txt; cat test.txt
+        echo ${{ github.event.distinct_size }}
+        echo ${{ github.event.before }}
+        echo ${{ github.event.after }}
+        echo ${{ github.event.ref }}
+        git diff --name-only ${{ github.event.before }} ${{ github.event.head}} > test.txt; cat test.txt
