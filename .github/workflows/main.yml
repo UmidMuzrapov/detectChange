@@ -16,4 +16,4 @@ jobs:
     - name: List Changes
       run: |
         echo ${{ github.event.ref}}
-        git diff --name-only origin/main ${{ github.sha }} > test.txt; cat test.txt
+        git diff --name-only ${{ github.event.before}} ${{ github.event.head}} > test.txt; cat test.txt
