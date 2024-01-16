@@ -17,8 +17,4 @@ jobs:
 
     - name: List Changes
       run: |
-        echo ${{ github.event.distinct_size }}
-        echo ${{ github.event.before }}
-        echo ${{ github.event.after }}
-        echo ${{ github.event.ref }}
         git diff --name-only ${{ github.event.before }} ${{ github.event.head}} | echo
