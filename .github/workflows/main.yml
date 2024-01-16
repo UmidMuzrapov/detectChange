@@ -15,5 +15,4 @@ jobs:
 
     - name: List Changes
       run: |
-        echo "Changes in the push:"
-        echo ${git diff --name-only origin/main ${{ github.sha }}}
+        git diff --name-only origin/main ${{ github.sha }}
