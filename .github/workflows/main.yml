@@ -13,4 +13,4 @@ jobs:
     - name: List Changes
       run: |
         echo "Changes in the push:"
-        echo ${{ GITHUB_SHA }}
+        git diff --name-only ${{ github.event.before }} ${{ github.sha }}
