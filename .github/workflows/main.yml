@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 2
         # Get the formatted line-by-line diff
       - id: get_diff
-        uses: ILikePlayingGames/line-diff
+        uses: ILikePlayingGames/line-diff-action@v1.3
         with:
           commit-hash: '@~'
         # Read ./diff.txt in your next step to use the diff.
