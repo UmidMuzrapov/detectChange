@@ -1,0 +1,16 @@
+name: Echo Changes
+
+on: push
+
+jobs:
+  echo-changes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: List Changes
+      run: |
+        echo "Changes in the push:"
+        git diff --name-only ${{ github.event.before }} ${{ github.sha }}
