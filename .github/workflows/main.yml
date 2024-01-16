@@ -13,4 +13,4 @@ jobs:
     - name: List Changes
       run: |
         echo "Changes in the push:"
-        git diff ${{ github.event.before }} ${{ github.event.before }}
+        git diff ${{ GITHUB_EVENT_BEFORE }} ${{ GITHUB_EVENT_BEFORE }}
