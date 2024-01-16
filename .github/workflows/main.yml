@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
     - name: List Changes
-      run: git diff --name-only ${{ github.event.before }} ${{ github.event.head}} | echo
+      run: git diff --name-only ${{ github.event.before }} ${{ github.event.after}} | echo
 
     - name: lis
       run: git status
