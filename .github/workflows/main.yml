@@ -7,14 +7,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          # Fetch HEAD and the commit before it
           fetch-depth: 2
-        # Get the formatted line-by-line diff
-      - id: get_diff
+
+      - name: Get line-by-line diff
+        id: get_diff
         uses: ILikePlayingGames/line-diff-action@v1.3
         with:
           commit-hash: '@~'
-        # Read ./diff.txt in your next step to use the diff.
-      - run: cat ./diff.txt;
+
+      - name: Save diff.txt as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: changed-files-diff
+          path: ./diff.txt
+
+      - name: Display diff content
+        run: cat ./diff.txt
