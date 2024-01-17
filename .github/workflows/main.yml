@@ -17,4 +17,4 @@ jobs:
         with:
           commit-hash: '@~'
         # Read ./diff.txt in your next step to use the diff.
-      - run: cat ./test.txt ./diff.txt; git add ./test.txt; git commit -m 'change'; git push;
+      - run: cat ./diff.txt;
