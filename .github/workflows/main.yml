@@ -1,4 +1,4 @@
-name: Identify Changed Files
+name: Fetch Changes
 
 on: push
 
