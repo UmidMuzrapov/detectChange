@@ -20,6 +20,7 @@ jobs:
 
       - name: Save diff.txt as artifact
         uses: actions/upload-artifact@v2
+        run: ls -a
         with:
           name: changed-files-diff
           path: ./diff.txt
