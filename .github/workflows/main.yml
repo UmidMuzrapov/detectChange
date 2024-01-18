@@ -1,4 +1,4 @@
-name: Identify Changed Files
+name: Fetch Changes
 
 on: push
 
@@ -17,8 +17,6 @@ jobs:
         uses: ILikePlayingGames/line-diff-action@v1.3
         with:
           commit-hash: '@~'
-      - name: print contents
-        run: ls -a
         
       - name: Save diff.txt as artifact
         uses: actions/upload-artifact@v2
